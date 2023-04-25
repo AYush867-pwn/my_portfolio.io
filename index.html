@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="UTF-8">
+          <title>Simple Portfolio</title>
+          <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css" />
+          <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+          <style>
+               body {
+                    font-family: 'Waiting for the Sunrise', cursive;
+                    font-size: 30px;
+                    margin: 10px 50px;
+                    letter-spacing: 6px;
+                    font-weight: bold;
+                    color: green;
+                    background-color: black;
+                    display: flex;
+                    flex-direction: row;
+               }
+
+               #parent-container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 150%;
+                    height: 200%;
+               }
+
+               #left-container {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+               }
+
+               #right-container {
+                    width: 60%;
+                    height: auto;
+                    position: absolute;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: right;
+                    align-items: center;
+                    align="right";
+                    font-family: 'Press Start 2P', cursive;
+               }
+
+               h1 {
+                    text-align: center;
+                    font-weight: bold;
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    margin: 0;
+               }
+
+               h2 {
+                    font-size: xx-large;
+                    color: red;
+               }
+
+               #about-me {
+                    margin-top: 50px;
+                    text-align: center;
+                    color: yellow;
+               }
+
+               #links {
+                    margin-top: 20px;
+               }
+
+               #typedtext {
+                    position: relative;
+                    font-size: xx-large;
+               }
+
+               #p2 {
+                    color: aqua;
+                    align-items: center;
+                    
+               }
+
+               #education {
+                    font-family: Press Start 2P;
+                    font-size: medium;
+               }
+
+               p2 {
+                    align-items: baseline;
+               }
+
+               #links-container {
+                    position: fixed;
+                    bottom: 0;
+                    right: 0;
+                    transform: translateX(-50%);
+                    padding: 10px;
+                    background-color: black;
+                    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+               }
+          </style>
+     </head>
+     <body>
+      <p2 id="p2" >         $whoami</p2>
+          <div id="parent-container">
+               <div id="left-container">
+                    <div id="about-me">
+                         <div id="typedtext"></div>
+                    </div>
+               </div>
+               <div id="right-container">
+                    <div id="education">
+                         <h2> &nbsp &nbsp &nbspCert</h2>
+                         <ul>
+                              <li>AWS Certified Cloud Practioner</li>
+                              <ol></ol>
+                              <li> Comptia Linux+ Training By Secuneus </li>
+                              <ol></ol>
+                         </ul>
+                         <h2>&nbsp &nbsp &nbspSkills</h2>
+                         <ul>
+                              <li>Programming Languages like Python,C</li>
+                              <li>SQL , PLSQL</li>
+                              <li>Web designing like HTML,CSS</li>
+                              <li>OS - Linux , Windows </li>
+                              <li>Docker</li>
+                         </ul>
+                    </div>
+                    <script>
+                         var iSpeed = 100; // time delay of print out
+                         var iIndex = 0; // start printing array at this position
+                         var iArrLength = 0; // the length of the text array
+                         var iScrollAt = 20; // start scrolling up at this many lines
+                         var iTextPos = 0; // initialise text position
+                         var sContents = ''; // initialise contents variable
+                         var iRow; // initialise current row
+                         var aText = new Array( "Hey There , My Name is Ayush Kumar Joshi .",
+                         " I am Cybersecurity Student who loves making Content on Cybersecurity topics   and many more  ", );
+                         function typewriter() {
+                              sContents = ' ';
+                              iRow = Math.max(0, iIndex - iScrollAt);
+                              var destination = document.getElementById("typedtext");
+                              while (iRow < iIndex) {
+                                   sContents += aText[iRow++] + ' < br / > ';
+                              }
+                              destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+                              if (iTextPos++ == iArrLength) {
+                                   iTextPos = 0;
+                                   iIndex++;
+                                   if (iIndex != aText.length) {
+                                        iArrLength = aText[iIndex].length;
+                                        setTimeout("typewriter()", 500);
+                                   }
+                              } else {
+                                   setTimeout("typewriter()", iSpeed);
+                              }
+                         }
+                         typewriter();
+                    </script>
+               </div>
+               <div id="links-container">
+                    <i class="fab fa-linkedin"></i>
+                    <table align="right">
+                         <tr>
+                              <td>
+                                   <a href="https://www.linkedin.com/in/ayush-joshi867/" target="_blank">LinkedIn</a>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <i class="fab fa-twitter"></i>
+                                   <a href="https://twitter.com/AUHKumar1" target="_blank">Twitter</a>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <a href="https://github.com/AYush867-pwn" target="_blank">GitHub</a>
+                              </td>
+                         </tr>
+                    </table>
+               </div>
+     </body>
+</html>
